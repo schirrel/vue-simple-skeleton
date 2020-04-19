@@ -2,24 +2,52 @@
   <nav class="navigation">
     <section class="container">
       <a class="navigation-title">
-      <h1 class="title">Company</h1>
+        <h1 class="title">Company</h1>
       </a>
       <ul class="navigation-list float-right">
         <li class="navigation-item">
           <router-link class="navigation-link" to="/">Home </router-link>
         </li>
-        <li class="navigation-item navigation-dropdown">
-          <input type="checkbox" id="dropdown-item" name="dropdown-item">
-          <label class="navigation-link" for="dropdown-item">Items</label>
-          <ol class="dropdown-options">
-            <li><router-link class="navigation-link" to="/item/products">Products</router-link></li>
-            <li><router-link class="navigation-link" to="/item/employes">Employes</router-link></li>
-          </ol>
+        <li class="navigation-item">
+          <a class="navigation-link" href="#popover-item" data-popover=""
+            >Items</a
+          >
+          <div class="popover" id="popover-item">
+            <ul class="popover-list">
+              <li class="popover-item">
+                <router-link class="popover-link" to="/item/products"
+                  >Products</router-link
+                >
+              </li>
+              <li class="popover-item">
+                <router-link class="popover-link" to="/item/employes"
+                  >Employes</router-link
+                >
+              </li>
+            </ul>
+          </div>
         </li>
 
-        <li class="navigation-item">
-          <router-link class="navigation-link" to="/logout">Log Out </router-link>
+           <li class="navigation-item">
+          <a class="navigation-link" href="#popover-me" data-popover=""
+            >Me</a
+          >
+          <div class="popover" id="popover-me">
+            <ul class="popover-list">
+              <li class="popover-item">
+                <router-link class="popover-link" to="/profile"
+                  >Profile</router-link
+                >
+              </li>
+              <li class="popover-item">
+                <router-link class="popover-link" to="/logout"
+                  >Logout</router-link
+                >
+              </li>
+            </ul>
+          </div>
         </li>
+
       </ul>
     </section>
   </nav>
@@ -27,19 +55,42 @@
 
 <script>
 export default {
-  name: 'Menu',
+  name: "Menu",
   mounted() {
-      (document.querySelectorAll('.dropdown-options li a')).forEach(a=>{
-        a.onclick =()=>{
-          document.querySelector('#dropdown-item').checked = false;
-        }
-      })
-
+    (function() {
+      function e(e) {
+        for (var t = 0; t < o.length; t++)
+          o[t].classList.remove("popover-open");
+      }
+      function t(t) {
+        t.preventDefault(),
+          document
+            .querySelector(this.getAttribute("href"))
+            .classList.contains("popover-open")
+            ? document
+                .querySelector(this.getAttribute("href"))
+                .classList.remove("popover-open")
+            : (e(),
+              document
+                .querySelector(this.getAttribute("href"))
+                .classList.add("popover-open")),
+          t.stopImmediatePropagation();
+      }
+      for (
+        var n = document.querySelectorAll("[data-popover]"),
+          o = document.querySelectorAll(".popover"),
+          r = 0;
+        r < n.length;
+        r++
+      )
+        n[r].addEventListener("click", t);
+      document.addEventListener("click", e);
+    })();
   },
-  data () {
-    return {}
-  }
-}
+  data() {
+    return {};
+  },
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -57,7 +108,7 @@ export default {
   width: 100%;
   z-index: 1;
 }
-.navigation-title{
+.navigation-title {
   float: left;
 }
 .navigation .container {
@@ -80,7 +131,7 @@ export default {
 .navigation .navigation-item {
   float: left;
   margin-bottom: 0;
-    padding: 0px 2rem;
+  padding: 0px 2rem;
   position: relative;
 }
 
@@ -123,44 +174,40 @@ export default {
   padding-left: 0px;
   list-style: none;
   margin: 0px -2rem;
-    border-color: transparent;
-
+  border-color: transparent;
 }
 
 .dropdown-options li {
-
   padding: 10px 5px;
 }
 .navigation-dropdown > input[type="checkbox"] {
   cursor: pointer;
   position: absolute;
   opacity: 0;
-  
 }
-.navigation-dropdown > input[type="checkbox"]+label {
+.navigation-dropdown > input[type="checkbox"] + label {
   cursor: pointer;
   font-weight: normal;
-color: #9b4dca;
+  color: #9b4dca;
 }
-.navigation-dropdown > input[type="checkbox"]:checked+label+.dropdown-options  {
- height: auto; 
+.navigation-dropdown
+  > input[type="checkbox"]:checked
+  + label
+  + .dropdown-options {
+  height: auto;
   margin-top: 0px;
-    border: 0.1rem solid #d1d1d1;
-    border-top-color: transparent;
+  border: 0.1rem solid #d1d1d1;
+  border-top-color: transparent;
 }
 
-
-.navigation-dropdown .dropdown-options  .navigation-link{
+.navigation-dropdown .dropdown-options .navigation-link {
   font-size: 1.4rem;
   line-height: 2.2rem;
   text-decoration: none;
 }
 
- * {
-   transition: all 300ms ease;
-   box-sizing: border-box;
- }
-
- 
-
+* {
+  transition: all 300ms ease;
+  box-sizing: border-box;
+}
 </style>

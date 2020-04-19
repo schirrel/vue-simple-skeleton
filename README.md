@@ -1,21 +1,24 @@
 # boilerplate
 
-> A Vue.js project
+> A simple Vue.js skeleton project
 
-## Build Setup
+## Features
 
-``` bash
-# install dependencies
-npm install
+- Login and Security
+- Requests Resource from native Fetch, using [Request.js](https://github.com/schirrel/request)
+- Light layout using [Milligram]()
+-
+-
+-
 
-# serve with hot reload at localhost:8080
-npm run dev
 
-# build for production with minification
-npm run build
 
-# build for production and view the bundle analyzer report
-npm run build --report
-```
+## Reference
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+Projects i've used as reference, some for structure, some for build, some for router strategy.
+
+- quasar-boilerplate [@phpzm](https://github.com/phpzm/quasar-boilerplate)
+- boilerplate [@iagocavalcante](https://github.com/iagocavalcante/boilerplate)
+- skeleton-quasar [@quasarframeworkbrasil](https://github.com/quasarframeworkbrasil/skeleton-quasar)
+- vue-enterprise-boilerplate [@chrisvfritz](https://github.com/chrisvfritz/vue-enterprise-boilerplate)
+- vue-argon-dashboard [@creativetim](https://github.com/creativetimofficial/vue-argon-dashboard)

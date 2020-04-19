@@ -27,6 +27,7 @@ export default {
 
 <style>
 @import url('../static/milligram.css');
+@import url('../static/milligram-extends.css');
 @import url('../static/style.css');
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;

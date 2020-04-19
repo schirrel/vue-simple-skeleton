@@ -1,18 +1,70 @@
 <template>
   <div class="container">
-    <h1>Welcome</h1>
+    <h2>Welcome</h2>
+
+    <div class="row">
+      <div class="column">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <small>Value A</small>
+            <h3>3.00</h3>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <small>Value B</small>
+            <h3>2.00</h3>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <small>Value C</small>
+            <h3>5.00</h3>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <div class="panel panel-outline">
+          <div class="panel-body">
+            <small>Total</small>
+            <h3>10.00</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="column">
+        <div class="panel panel-outline">
+          <div class="panel-heading">
+            Chart A
+          </div>
+          <div class="panel-body">
+            Draw a chart here, cuz i'm lazy
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <div class="panel panel-outline">
+          <div class="panel-heading">Chart B</div>
+          <div class="panel-body">
+            Draw a chart here, cuz i'm lazy
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-
 export default {
   name: "Home",
   data() {
-    return {
-  
-    };
-  }
+    return {};
+  },
 };
 </script>
 
