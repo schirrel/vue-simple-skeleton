@@ -20,8 +20,8 @@
                 >
               </li>
               <li class="popover-item">
-                <router-link class="popover-link" to="/item/employes"
-                  >Employes</router-link
+                <router-link class="popover-link" to="/item/employees"
+                  >Employees</router-link
                 >
               </li>
             </ul>

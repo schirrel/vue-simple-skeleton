@@ -3,8 +3,8 @@ import Router from 'vue-router'
 import Home from '@/components/Home'
 import Product from '@/components/items/Product'
 import Products from '@/components/items/Products'
-import Employes from '@/components/items/Employes'
-import Employe from '@/components/items/Employe'
+import Employees from '@/components/items/Employees'
+import Employee from '@/components/items/Employee'
 import Login from '@/pages/Login'
 import Logout from '@/pages/Logout'
 import Secure from '@/pages/Secure'
@@ -65,24 +65,24 @@ let routes =  [
           component: () => import(/* webpackChunkName: "item" */ '../components/items/Product.vue')
       },
       {
-        path: '/item/employe',
-        name: 'secure.item.employe',
-        component: Employe,
+        path: '/item/employee',
+        name: 'secure.item.employee',
+        component: Employee,
         meta: {
-          title: 'Employe',
+          title: 'Employee',
           secure:true
         },
-        component: () => import(/* webpackChunkName: "item" */ '../components/items/Employe.vue')
+        component: () => import(/* webpackChunkName: "item" */ '../components/items/Employee.vue')
       },
       {
-        path: '/item/employes',
-        name: 'secure.item.employes',
-        component: Employes,
+        path: '/item/employees',
+        name: 'secure.item.employees',
+        component: Employees,
         meta: {
-          title: 'Employes',
+          title: 'Employees',
           secure:true
         },
-        component: () => import(/* webpackChunkName: "item" */ '../components/items/Employes.vue')
+        component: () => import(/* webpackChunkName: "item" */ '../components/items/Employees.vue')
       }
     ]
   }, 

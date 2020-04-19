@@ -16,7 +16,7 @@
         </tr>
         <tr v-show="!data.collection || !data.collection.length">
           <td>
-            <router-link class="button" to="/item/employe">New</router-link>
+            <router-link class="button" to="/item/employee">New</router-link>
           </td>
           <td  class="text-center" colspan="2">No data found</td>
         </tr>
@@ -26,10 +26,10 @@
 </template>
 
 <script>
-import { $employe } from "@/services/Resources";
+import { $employee } from "@/services/Resources";
 
 export default {
-  name: "Employes",
+  name: "Employees",
   data() {
     return {
       data: {}
@@ -37,8 +37,8 @@ export default {
   },
   methods: {
     search: function(evt) {
-      console.log(this.employe.document);
-      $employes.pagination({ pag1: 1, size: 10 }).then(res => {
+      console.log(this.employee.document);
+      $employees.pagination({ pag1: 1, size: 10 }).then(res => {
         this.data = res;
       });
     }

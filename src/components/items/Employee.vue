@@ -1,18 +1,18 @@
 <template>
   <div class="container">
-    <form action="" @submit.prevent="registerEmploye">
+    <form action="" @submit.prevent="registerEmployee">
       <article>
-        <h4>Employe</h4>
+        <h4>Employee</h4>
         <div class="quarter-width">
           <label for="fieldDocument">Document</label>
           <input
             type="text"
-            v-model="employe.document"
-            @change="getEmploye"
+            v-model="employee.document"
+            @change="getEmployee"
             required
             placeholder="78954654654"
             id="fieldDocument"
-            :disabled="employe.id"
+            :disabled="employee.id"
           />
         </div>
 
@@ -20,8 +20,8 @@
           <label for="fieldName">Name</label>
           <input
             type="text"
-            v-model="employe.name"
-            :disabled="employe.id"
+            v-model="employee.name"
+            :disabled="employee.id"
             placeholder="Jon"
             id="fieldName"
             required
@@ -30,7 +30,7 @@
       </article>
 
       <div class="form-footer">
-        <router-link class="button button-outline" to="/item/employes">Cancel</router-link>
+        <router-link class="button button-outline" to="/item/employees">Cancel</router-link>
         <button class="button">Save</button>
       </div>
     </form>
@@ -38,25 +38,25 @@
 </template>
 
 <script>
-import { $employes } from "@/services/Resources";
+import { $employees } from "@/services/Resources";
 
 export default {
-  name: "Employe",
+  name: "Employee",
   data() {
     return {
-      employe: {}
+      employee: {}
     };
   },
   methods: {
-    getEmploye: function(evt) {
-      console.log(this.employe.document);
-      $employes.search({ document: this.employe.document, size: 1 }).then(res => {
+    getEmployee: function(evt) {
+      console.log(this.employee.document);
+      $employees.search({ document: this.employee.document, size: 1 }).then(res => {
         if (res && res.id) {
-          this.employe = res;
+          this.employee = res;
         }
       });
     },
-    registerEmploye: function(evt) {
+    registerEmployee: function(evt) {
       console.log(evt);
     }
   }

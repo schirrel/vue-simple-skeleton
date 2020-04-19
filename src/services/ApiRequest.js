@@ -36,7 +36,9 @@ export default class APIRequest {
      * @returns Promise
      */
     pagination(params) {
-        return Request.get(this.uri+'/pagination',params);
+        params.page = params.page || 1;
+        params.limit = params.limit || 10; 
+        return Request.get(`${this.uri}/pagination`,params);
     }
     /**
      * 
