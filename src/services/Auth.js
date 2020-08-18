@@ -1,5 +1,4 @@
 import Storage from '@/services/Storage';
-import Request from '@/services/ApiRequest';
 
 export default class Auth {
 

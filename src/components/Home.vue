@@ -1,7 +1,6 @@
 <template>
   <div class="container">
     <h2>Welcome</h2>
-
     <div class="row">
       <div class="column">
         <div class="panel panel-default">
@@ -60,11 +59,20 @@
 </template>
 
 <script>
+import { $todo } from "@/services/Resources";
 export default {
   name: "Home",
   data() {
-    return {};
+    return {
+      isLoading: false
+    };
   },
+  mounted() {
+    $todo.loading((isLoading)=>{this.isLoading = isLoading;})
+    $todo.get('1').then((res)=> {
+      console.log(res);
+    })
+  }
 };
 </script>
 

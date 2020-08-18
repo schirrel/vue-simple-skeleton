@@ -19,6 +19,11 @@
                   >Products</router-link
                 >
               </li>
+                 <li class="popover-item">
+                <router-link class="popover-link" to="/item/clients"
+                  >Clients</router-link
+                >
+              </li>
               <li class="popover-item">
                 <router-link class="popover-link" to="/item/employees"
                   >Employees</router-link
