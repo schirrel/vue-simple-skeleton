@@ -5,8 +5,8 @@
 ## Features
 
 - Login and Security
-- HTTP / Requests Resource from native Fetch, using [Request.js](https://github.com/schirrel/request) [will be replaced with axions]
-- Layout with Millagram (will be replaced with bootstrap)
+- HTTP / Requests Resource from native Fetch, using [Request.js](https://github.com/schirrel/request) [will be replaced with axios]
+- Layout with Milligram (will be replaced with Bootstrap)
 -
 -
 -
