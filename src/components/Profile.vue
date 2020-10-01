@@ -1,7 +1,6 @@
 <template>
   <div class="container">
     <h2>Profile</h2>
-  
   </div>
 </template>
 
@@ -15,10 +14,9 @@ export default {
     };
   },
   mounted() {
-    $todo.loading((isLoading)=>{this.isLoading = isLoading;})
-    $todo.get('1').then((res)=> {
-      console.log(res);
-    })
+    $todo.get("/1").then(res => {
+      console.log(res.data);
+    });
   }
 };
 </script>
