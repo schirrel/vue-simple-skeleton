@@ -29,6 +29,7 @@
 </template>
 
 <script>
+import Vue from 'vue';
 import Auth from '../services/Auth';
     export default {
         name: 'Login',
@@ -42,6 +43,7 @@ import Auth from '../services/Auth';
         },
         methods: {
             doLogin : function(evt) {
+                Vue.$toast.success('Login realizado com sucesso');
                 Auth.login(this.auth, ()=>{
                     this.$router.push('/')
                 })
