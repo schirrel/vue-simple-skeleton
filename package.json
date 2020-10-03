@@ -13,6 +13,7 @@
   "dependencies": {
     "@schirrel/api-request": "^1.0.4",
     "@schirrel/request": "^1.2.0",
+    "axios": "^0.20.0",
     "milligram": "^1.3.0",
     "vue": "2.6.11",
     "vue-js-modal": "^1.3.31",

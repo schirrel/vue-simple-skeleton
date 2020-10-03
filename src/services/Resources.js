@@ -1,8 +1,10 @@
-import APIRequest from '@schirrel/api-request/index';
+import axios from "axios";
 
-const toUrl = url => `http://localhost:3000/api/${url}`;
+const toUrl = (url) => `http://localhost:3000/api/${url}`;
 
-export const $product = new APIRequest(toUrl('/product'));
-export const $client = new APIRequest(toUrl('/client'));
-export const $employee = new APIRequest(toUrl('/product'));
-export const $todo = new APIRequest('https://jsonplaceholder.typicode.com/todos'); // Example for test
+export const $product = axios.create({ baseURL: toUrl("/product") });
+export const $client = axios.create({ baseURL: toUrl("/client") });
+export const $employee = axios.create({ baseURL: toUrl("/employee") });
+export const $todo = axios.create({
+  baseURL: "https://jsonplaceholder.typicode.com/todos",
+}); // Example for test

@@ -38,20 +38,14 @@
     <div class="row">
       <div class="column">
         <div class="panel panel-outline">
-          <div class="panel-heading">
-            Chart A
-          </div>
-          <div class="panel-body">
-            Draw a chart here, cuz i'm lazy
-          </div>
+          <div class="panel-heading">Chart A</div>
+          <div class="panel-body">Draw a chart here, cuz i'm lazy</div>
         </div>
       </div>
       <div class="column">
         <div class="panel panel-outline">
           <div class="panel-heading">Chart B</div>
-          <div class="panel-body">
-            Draw a chart here, cuz i'm lazy
-          </div>
+          <div class="panel-body">Draw a chart here, cuz i'm lazy</div>
         </div>
       </div>
     </div>
@@ -68,10 +62,9 @@ export default {
     };
   },
   mounted() {
-    $todo.loading((isLoading)=>{this.isLoading = isLoading;})
-    $todo.get('1').then((res)=> {
-      console.log(res);
-    })
+    $todo.get("/1").then(res => {
+      console.log(res.data);
+    });
   }
 };
 </script>
